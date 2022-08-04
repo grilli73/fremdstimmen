@@ -165,7 +165,7 @@
 							.attr("d", path )
 							.style("stroke-width", function(d) { return Math.max(1, d.dy); })
 							.style("fill","none")
-							.style("stroke", function (d){ return colors(d.source.name); })
+							.style("stroke", function (d){ return colors(d.target.name); })
 							.sort(function(a, b) { return b.dy - a.dy; })
 
 							.on("mouseover", mouseover)
@@ -215,7 +215,7 @@
 							.style("pointer-events","none")
 							.filter(function(d) { return d.x < +width / 2; })
 							.attr("x", 6 + sankey.nodeWidth())
-							.attr("text-anchor", "end");
+							.attr("text-anchor", "start");
 			});
 		}());
 
