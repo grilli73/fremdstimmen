@@ -166,7 +166,7 @@
 							.style("stroke-width", function(d) { return Math.max(1, d.dy); })
 							.style("fill","none")
 							.style("stroke", function (d){ return colors(d.source.name); })
-							.sort(function(a, b) { return b.dy - a.dy; })
+							.sort(function(b, a) { return b.dy - a.dy; })
 
 							.on("mouseover", mouseover)
 							.on("mousemove", function(d){mousemove(d)})
@@ -188,7 +188,7 @@
 
 				function mousemove(d) {
 					div
-							.html("<strong>" + format(d.value) + " Person" + (function(d){return format(d.value) > 1 ? "en" : ""}(d)) + "</strong> wechselte" + (function(d){return format(d.value) > 1 ? "n" : ""}(d)) + " von <strong>" + d.source.name + "</strong> zu <strong>" + d.target.name + "</strong>")
+							.html("<strong>" + format(d.value) + " Stimmen" + (function(d){return format(d.value) > 1 ? "en" : ""}(d)) + "</strong> wechselte" + (function(d){return format(d.value) > 1 ? "n" : ""}(d)) + " von <strong>" + d.source.name + "</strong> zu <strong>" + d.target.name + "</strong>")
 							.style("left", (d3.event.pageX - 50) + "px")
 							.style("top", (d3.event.pageY - 28) + "px");
 				}
