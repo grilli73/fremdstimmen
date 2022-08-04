@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<title>Parteiwechsel</title>
+<title>Fremdstimmen</title>
 <style>
   #chart {
     height: 360px;
@@ -166,7 +166,7 @@
 							.style("stroke-width", function(d) { return Math.max(1, d.dy); })
 							.style("fill","none")
 							.style("stroke", function (d){ return colors(d.source.name); })
-							.sort(function(b, a) { return b.dy - a.dy; })
+							.sort(function(a, b) { return b.dy - a.dy; })
 
 							.on("mouseover", mouseover)
 							.on("mousemove", function(d){mousemove(d)})
